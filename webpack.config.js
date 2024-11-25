@@ -9,7 +9,8 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3002/",
+    // publicPath: "http://localhost:3002/",
+    publicPath: "https://mf-colorlist-omv.netlify.app/",
   },
 
   resolve: {
