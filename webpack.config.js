@@ -7,10 +7,12 @@ const deps = require("./package.json").dependencies;
 
 const printCompilationMessage = require('./compilation.config.js');
 
-module.exports = (_, argv) => ({
+module.exports = (_, argv) => {
+  return {
   output: {
-    // publicPath: "http://localhost:3002/",
-    publicPath: "https://mf-colorlist-omv.netlify.app/",
+    publicPath: argv.mode === "development"
+    ? "http://localhost:3002/"
+    : "https://mf-colorlist-omv.netlify.app/",
   },
 
   resolve: {
@@ -86,4 +88,4 @@ module.exports = (_, argv) => ({
     }),
     new Dotenv()
   ],
-});
+}};
